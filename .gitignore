@@ -1,5 +1,5 @@
-#Ignore local db data
-./local_db/chaindata
+#Ignore embedded db data
+local_db
 
 #Ignore node modules
 node_modules
