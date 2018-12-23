@@ -7,7 +7,7 @@ In this project we create and manage web APIs with Express Node.js framework, to
 To setup the project for review do the following:
 1. Download the project.
 2. Run command __npm install__ to install the project dependencies.
-3. Run command __node simpleChain.js__ in the root directory to initialize a blockchain and insert some dummy values. 
+3. OPTIONAL Run command __node simpleChain.js__ in the root directory to initialize a blockchain and insert some dummy values. This will add 10 blocks to the blockchain for testing purpose. Wait till "Inserted Bock# 10 into DB." is printed to proceed to next step.
 4. Run command __node app.js__ in the root directory to kick start express web server on *http://localhost:8000*
 
 
