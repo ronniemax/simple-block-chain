@@ -3,6 +3,7 @@
 |  =========================================================*/
 
 const BlockChain = require('./BlockChain.js');
+
 const Block = require('./Block.js');
 
 let myBlockChain = new BlockChain.Blockchain();
