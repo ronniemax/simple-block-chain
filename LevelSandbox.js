@@ -98,8 +98,6 @@ class LevelSandbox {
             
             .on('close', function () {
             
-                console.log("Block count calculated is "+count)
-
                 resolve(count);
             });
         });

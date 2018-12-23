@@ -59,8 +59,6 @@ class Blockchain {
 
         newBlock.height = previousBlockHeight + 1;
 
-            
-    
         // UTC timestamp
         newBlock.time = new Date().getTime().toString().slice(0,-3);
 
@@ -92,7 +90,7 @@ class Blockchain {
     // Get Block By Height
     async getBlock(blockHeight) {
         
-        return JSON.parse(await this.db.getLevelDBData(blockHeight));
+        return JSON.parse(await this.db.getLevelDBData(blockHeight))
     }
 
     // Validate if Block is being tampered by Block Height
