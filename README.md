@@ -23,13 +23,13 @@ The project has been build using Node *v10.14.2*
 
 ## REST API Details
 
-### GET /api/block/{BlockHeight}
+### 1. GET /api/block/{BlockHeight}
 
 This API can be used to fetch a given Block information from the Blockchain by passing in its block height. 
 
 An example would be:
 
-##### Request With Valid Block Height Input
+##### 1.1 Request With Valid Block Height Input
 ```
 Method: GET
 
@@ -37,7 +37,7 @@ Endpoint : http://localhost:8000/api/block/14
 
 ```
 
-##### RESPONSE
+##### Response
 ```
 Status Code: 200
 
@@ -50,7 +50,7 @@ Status Code: 200
 }
 ```
 
-##### Request With Invalid Block Height Input
+##### 1.2 Request With Invalid Block Height Input
 ```
 Method: GET
 
@@ -58,16 +58,16 @@ Endpoint: http://localhost:8000/api/block/abc
 
 ```
 
-##### RESPONSE
+##### Response
 ```
 Status Code: 400 (Bad Request)
 ```
 
-### POST /api/block/
+### 2. POST /api/block/
 
 This API can be used to add a new Block to the blockchain. The data to be added to the blockchain body is passed as a JSON request body. The block headers are then generated and add to the blockchhain along with the body. The API responds back with the newly added blockchain object. 
 
-##### Request with valid data body
+##### 2.1 Request with valid data body
 ```
 Method: POST
 
@@ -92,7 +92,7 @@ Status Code: 200
 }
 ```
 
-##### Request With Invalid data body
+##### 2.2 Request With Invalid data body
 ```
 Method: POST
 
@@ -104,7 +104,7 @@ Content-Type: application/json
 
 ```
 
-##### RESPONSE
+##### Response
 ```
 Status Code: 400 (Bad Request)
 ```
