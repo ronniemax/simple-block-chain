@@ -7,7 +7,7 @@ const Block = require('./Block.js');
 const bodyParser = require('body-parser')
 
 
-var jsonParser = bodyParser.json()
+let jsonParser = bodyParser.json()
 
 let myBlockChain = new BlockChain.Blockchain();
 
@@ -36,7 +36,7 @@ class BlockController {
      */
     getBlockByIndex() {
         
-        this.app.get("/api/block/:index", (req, res) => {
+        this.app.get("/block/:index", (req, res) => {
 
             myBlockChain.getBlock(req.params.index).then((block) => {
                 
@@ -46,7 +46,7 @@ class BlockController {
             }).catch((err) => { 
                 
                 //Return 400 is no data found
-                return res.sendStatus(400)
+                return res.status(400).send('Requested index not found!')
             
             }); 
         });
@@ -57,13 +57,13 @@ class BlockController {
      */
     postNewBlock() {
         
-        this.app.post("/api/block",jsonParser,(req, res) => {
+        this.app.post("/block",jsonParser,(req, res) => {
 
             //Get the value associated with "data" field in JSON request
             var inputData = req.body.data
 
             //Return 400 if no data found in input
-            if (!inputData) return res.sendStatus(400)
+            if (!inputData) return res.status(400).send('The input data canot be empty')
 
             //Create a new draft block with input data
             var newBlockToBeAdded = new Block.Block(inputData)
@@ -79,7 +79,7 @@ class BlockController {
                 console.error(err)
                
                 //Return 500 if internal exception occurs
-                return res.sendStatus(500)
+                return res.status(500).send('An internal server error occurred')
             });
 
             
